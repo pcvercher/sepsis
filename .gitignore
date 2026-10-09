@@ -1,0 +1,64 @@
+# --- Secrets: never commit ---
+.env
+.env.*
+!.env.example
+*.pem
+*.key
+*.p12
+*.pfx
+secrets/
+credentials*.json
+
+# --- Claude Code: local-only state ---
+# settings.local.json holds per-machine overrides and cached e2e test credentials
+.claude/settings.local.json
+# Agent worktrees (super-board / super-build / ui-refine-loop) and their .run dirs
+.claude/worktrees/
+# Legacy worktree location
+.worktrees/
+# Tool scratch output (visual skill, ad-hoc runs)
+_tmp/
+.visual/
+
+# --- Data: keep patient/clinical data out of git ---
+data/raw/
+data/interim/
+*.parquet
+*.feather
+*.h5
+*.hdf5
+*.sqlite
+*.sqlite3
+*.db
+
+# --- Python ---
+__pycache__/
+*.py[cod]
+.venv/
+venv/
+.python-version
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+.coverage
+htmlcov/
+*.egg-info/
+.ipynb_checkpoints/
+
+# --- Node ---
+node_modules/
+dist/
+build/
+.next/
+coverage/
+playwright-report/
+test-results/
+
+# --- OS / editor ---
+.DS_Store
+Thumbs.db
+desktop.ini
+.vscode/*
+!.vscode/extensions.json
+.idea/
+*.swp
